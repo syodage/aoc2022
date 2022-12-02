@@ -10,7 +10,7 @@ import (
 
 func ReadLines(path string) []string {
 
-  file, err := os.Open("inputs/day01_input.txt")
+  file, err := os.Open(path)
   if err != nil {
     log.Fatal(err)
   }
