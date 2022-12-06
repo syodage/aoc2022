@@ -16,7 +16,7 @@ func main() {
   // fmt.Printf("Day02_02: Total Score: %d\n", Day02_SecondAnswer(day02Input))
 
   
-  day03Input := ReadLines("inputs/day03_input.txt")
+  // day03Input := ReadLines("inputs/day03_input.txt")
   // day03Input := []string{
   //   "vJrwpWtwJgWrhcsFMMfFFhFp",
   //   "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
@@ -27,7 +27,63 @@ func main() {
   // } 
 
   // fmt.Printf("Day03_01: Total Score: %d\n", Day03_FirstAnswer(day03Input))
-  fmt.Printf("Day03_02: Total Score: %d\n", Day03_SecondAnswer(day03Input))
+  // fmt.Printf("Day03_02: Total Score: %d\n", Day03_SecondAnswer(day03Input))
+
+
+  // day04Input := ReadLines("inputs/day04_input.txt")
+//   day04Input := []string {
+// "2-4,6-8",
+// "2-3,4-5",
+// "5-7,7-9",
+// "2-8,3-7",
+// "6-6,4-6",
+// "2-6,4-8",
+//   } 
+  // fmt.Printf("Day04_01: Total Score: %d\n", Day04_FirstAnswer(day04Input))
+  // fmt.Printf("Day04_02: Total Score: %d\n", Day04_SecondAnswer(day04Input))
+
+  // fmt.Println("Start")
+  // for _, s := range ReadHead("inputs/day05_input.txt", 10) {
+  //   fmt.Printf("%s\n", s)
+  // }
+  // fmt.Println("End")
+
+//   day05Input := []string {
+// "move 1 from 2 to 1",
+// "move 3 from 1 to 3",
+// "move 2 from 2 to 1",
+// "move 1 from 1 to 2",
+//   }
+//    day05_Crates := map[int][]rune {
+//      1: {'Z', 'N'},
+//      2: {'M', 'C', 'D'},
+//      3: {'P'},
+//    }
+  
+// [D]                     [N] [F]    
+// [H] [F]             [L] [J] [H]    
+// [R] [H]             [F] [V] [G] [H]
+// [Z] [Q]         [Z] [W] [L] [J] [B]
+// [S] [W] [H]     [B] [H] [D] [C] [M]
+// [P] [R] [S] [G] [J] [J] [W] [Z] [V]
+// [W] [B] [V] [F] [G] [T] [T] [T] [P]
+// [Q] [V] [C] [H] [P] [Q] [Z] [D] [W]
+//  1   2   3   4   5   6   7   8   9 
+  day05_Crates := map[int][]rune {
+    1: {'Q', 'W', 'P', 'S', 'Z', 'R', 'H', 'D'},
+    2: {'V', 'B', 'R', 'W', 'Q', 'H', 'F'},
+    3: {'C', 'V', 'S', 'H'},
+    4: {'H', 'F', 'G'},
+    5: {'P', 'G', 'J', 'B', 'Z'},
+    6: {'Q', 'T', 'J', 'H', 'W', 'F', 'L'},
+    7: {'Z', 'T', 'W', 'D', 'L', 'V', 'J', 'N'},
+    8: {'D', 'T', 'Z', 'C', 'J', 'G', 'H', 'F'},
+    9: {'W', 'P', 'V', 'M', 'B', 'H'},
+  }
+  day05Input := ReadLinesWithIgnoreHead("inputs/day05_input.txt", 10) 
+  // fmt.Printf("line 1: %s\n", day05Input[0])
+  // fmt.Printf("Day05_01: Total Score: %s\n", Day05_FirstAnswer(day05Input, day05_Crates))
+  fmt.Printf("Day05_02: Total Score: %s\n", Day05_SecondAnswer(day05Input, day05_Crates))
 
 }
 

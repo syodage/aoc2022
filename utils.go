@@ -9,6 +9,21 @@ import (
 
 
 func ReadLines(path string) []string {
+   return readLines(path)
+}
+
+func ReadLinesWithIgnoreHead(path string, ignoreHead int) []string  {
+  res := readLines(path)
+  return res[ignoreHead:]
+}
+
+func ReadHead(path string, n int) []string {
+  res := readLines(path)
+  return res[:n]
+}
+
+
+func readLines(path string) []string {
 
   file, err := os.Open(path)
   if err != nil {
