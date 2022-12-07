@@ -65,7 +65,7 @@ func Day04_SecondAnswer(inputs []string) int {
       continue
     }
 
-      totalOverlap++
+    totalOverlap++
 
 
   }
