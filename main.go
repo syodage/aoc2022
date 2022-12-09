@@ -93,7 +93,7 @@ func main() {
 	// fmt.Printf("Day06_01: Data need to processed: %v\n", Day06_FirstAnswer(day06Input))
 	// fmt.Printf("Day06_01: Data need to processed: %v\n", Day06_SecondAnswer(day06Input))
 
-	day07Input := ReadLines("inputs/day07_input.txt")
+	// day07Input := ReadLines("inputs/day07_input.txt")
 	// day07Input := []string{
 	// 	"$ cd /",
 	// 	"$ ls",
@@ -120,7 +120,7 @@ func main() {
 	// 	"7214296 k",
 	// }
 	// fmt.Printf("Day07_01: Data need to processed: %v\n", Day07_FirstAnswer(day07Input, 100000))
-	fmt.Printf("Day07_02: delete dir with size: %d\n", Day07_SecondAnswer(day07Input))
+	// fmt.Printf("Day07_02: delete dir with size: %d\n", Day07_SecondAnswer(day07Input))
 
 	// - / (dir)
 	// - a (dir)
@@ -136,4 +136,17 @@ func main() {
 	//   - d.log (file, size=8033020)
 	//   - d.ext (file, size=5626152)
 	//   - k (file, size=7214296)
+
+	day08Input := ReadLines("inputs/day08_input.txt")
+	// day08Input := []string{
+	// 	"30373",
+	// 	"25512",
+	// 	"65332",
+	// 	"33549",
+	// 	"35390",
+	// }
+
+	// fmt.Printf("\nDay08_01: visible trees: %d\n", Day08_FirstAnswer(day08Input))
+	fmt.Printf("\nDay08_02: heighest scenic score: %d\n", Day08_SecondAnswer(day08Input))
+
 }
