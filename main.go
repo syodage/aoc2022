@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	debugEnable = true
 	// fmt.Println("Hello AoC++")
 	// fmt.Printf("Day01_01: Max Calary sum: %d\n", Day01_FirstAnswer())
 	// fmt.Printf("Day01_02: Sum of top 3 max Calary sums: %d\n", Day01_SecondAnswer())
@@ -137,7 +138,7 @@ func main() {
 	//   - d.ext (file, size=5626152)
 	//   - k (file, size=7214296)
 
-	day08Input := ReadLines("inputs/day08_input.txt")
+	// day08Input := ReadLines("inputs/day08_input.txt")
 	// day08Input := []string{
 	// 	"30373",
 	// 	"25512",
@@ -147,6 +148,29 @@ func main() {
 	// }
 
 	// fmt.Printf("\nDay08_01: visible trees: %d\n", Day08_FirstAnswer(day08Input))
-	fmt.Printf("\nDay08_02: heighest scenic score: %d\n", Day08_SecondAnswer(day08Input))
+	// fmt.Printf("\nDay08_02: heighest scenic score: %d\n", Day08_SecondAnswer(day08Input))
+
+	day09Input := []string{
+		"R 4",
+		"U 4",
+		"L 3",
+		"D 1",
+		"R 4",
+		"D 1",
+		"L 5",
+		"R 2",
+
+		// "R 5",
+		// "U 8",
+		// "L 8",
+		// "D 3",
+		// "R 17",
+		// "D 10",
+		// "L 25",
+		// "U 20",
+	}
+	// day09Input := ReadLines("inputs/day09_input.txt")
+	fmt.Printf("Day09_01: visited cells: %d\n", Day09_FirstAnswer(day09Input))
+	// fmt.Printf("Day09_02: visited cells: %d\n", Day09_SecondAnswer(day09Input))
 
 }
