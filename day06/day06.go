@@ -1,6 +1,19 @@
-package main
+package day06
 
-func Day06_FirstAnswer(inputs []string) []int {
+import "syodage/aoc2022/utils"
+
+var (
+	LocalInput = []string{
+		"mjqjpqmgbljsphdztnvjfqwrcgsmlb",    // 7
+		"bvwbjplbgvbhsrlpgdmjqwftvncz",      // 5
+		"nppdvjthqldpwncqszvftbrmjlhg",      // 6
+		"nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", // 10
+		"zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw",  // 11
+	}
+	FinalInput = utils.ReadLines("inputs/day06_input.txt")
+)
+
+func FirstPart(inputs []string) []int {
 	var res []int
 	for _, input := range inputs {
 		res = append(res, day06_consecutiveRunes(input, 4))
@@ -8,7 +21,7 @@ func Day06_FirstAnswer(inputs []string) []int {
 	return res
 }
 
-func Day06_SecondAnswer(inputs []string) []int {
+func SecondPart(inputs []string) []int {
 	var res []int
 	for _, input := range inputs {
 		res = append(res, day06_consecutiveRunes(input, 14))

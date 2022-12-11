@@ -1,8 +1,20 @@
-package main
+package day08
 
 import (
 	"fmt"
 	"strconv"
+	"syodage/aoc2022/utils"
+)
+
+var (
+	FinalIput  = utils.ReadLines("inputs/day08_input.txt")
+	LocalInput = []string{
+		"30373",
+		"25512",
+		"65332",
+		"33549",
+		"35390",
+	}
 )
 
 type tree struct {
@@ -17,8 +29,8 @@ func (t *tree) print() {
 	fmt.Printf("-%t-", t.leftVisible)
 }
 
-func Day08_FirstAnswer(inputs []string) int {
-	grid := day08_buildGrid(inputs)
+func FirstPart(inputs []string) int {
+	grid := buildGrid(inputs)
 
 	// left to right
 	var currMax int
@@ -107,9 +119,9 @@ func Day08_FirstAnswer(inputs []string) int {
 	return visibleCount
 }
 
-func Day08_SecondAnswer(inputs []string) int {
+func SecondPart(inputs []string) int {
 
-	grid := day08_buildGrid(inputs)
+	grid := buildGrid(inputs)
 
 	var maxScenicScore int
 
@@ -173,7 +185,7 @@ func Day08_SecondAnswer(inputs []string) int {
 	return maxScenicScore
 }
 
-func day08_buildGrid(inputs []string) [][]*tree {
+func buildGrid(inputs []string) [][]*tree {
 	var grid [][]*tree
 	for _, r := range inputs {
 		var row []*tree

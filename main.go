@@ -2,126 +2,32 @@ package main
 
 import (
 	"fmt"
+	"syodage/aoc2022/day10"
+	"syodage/aoc2022/utils"
 )
 
 func main() {
-	debugEnable = true
 	// fmt.Println("Hello AoC++")
-	// fmt.Printf("Day01_01: Max Calary sum: %d\n", Day01_FirstAnswer())
-	// fmt.Printf("Day01_02: Sum of top 3 max Calary sums: %d\n", Day01_SecondAnswer())
+	// fmt.Printf("Day01_01: Max Calary sum: %d\n", day01.FirstAnswer())
+	// fmt.Printf("Day01_02: Sum of top 3 max Calary sums: %d\n", day01.SecondAnswer())
 
-	// day02Input := ReadLines("inputs/day02_input.txt")
-	// fmt.Printf("Day02_01: Total Score: %d\n", Day02_FirstAnswer(day02Input))
-	// day02Input := []string{"A Y", "B X", "C Z"}
-	// fmt.Printf("Day02_02: Total Score: %d\n", Day02_SecondAnswer(day02Input))
+	// fmt.Printf("Day02_01: Total Score: %d\n", day02.FirstPart(day02.FinalInput))
+	// fmt.Printf("Day02_02: Total Score: %d\n", day02.SecondPart(day02.FinalInput))
 
-	// day03Input := ReadLines("inputs/day03_input.txt")
-	// day03Input := []string{
-	//   "vJrwpWtwJgWrhcsFMMfFFhFp",
-	//   "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
-	//   "PmmdzqPrVvPwwTWBwg",
-	//   "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
-	//   "ttgJtRGJQctTZtZT",
-	//   "CrZsJsPPZsGzwwsLwLmpwMDw",
-	// }
+	// fmt.Printf("Day03_01: Total Score: %d\n", day03.FirstPart(day03.FinalInput))
+	// fmt.Printf("Day03_02: Total Score: %d\n", day03.SecondPart(day03.FinalInput))
 
-	// fmt.Printf("Day03_01: Total Score: %d\n", Day03_FirstAnswer(day03Input))
-	// fmt.Printf("Day03_02: Total Score: %d\n", Day03_SecondAnswer(day03Input))
+	// fmt.Printf("Day04_01: Total Score: %d\n", day04.FirstPart(day04.FinalInput))
+	// fmt.Printf("Day04_02: Total Score: %d\n", day04.SecondPart(day04.FinalInput))
 
-	// day04Input := ReadLines("inputs/day04_input.txt")
-	//   day04Input := []string {
-	// "2-4,6-8",
-	// "2-3,4-5",
-	// "5-7,7-9",
-	// "2-8,3-7",
-	// "6-6,4-6",
-	// "2-6,4-8",
-	//   }
-	// fmt.Printf("Day04_01: Total Score: %d\n", Day04_FirstAnswer(day04Input))
-	// fmt.Printf("Day04_02: Total Score: %d\n", Day04_SecondAnswer(day04Input))
+	// fmt.Printf("Day05_01: Total Score: %s\n", day05.FirstAnswer(day05.FinalInput, day05.FinalCrates))
+	// fmt.Printf("Day05_02: Total Score: %s\n", day05.SecondAnswer(day05.FinalInput, day05.FinalCrates))
 
-	// fmt.Println("Start")
-	// for _, s := range ReadHead("inputs/day05_input.txt", 10) {
-	//   fmt.Printf("%s\n", s)
-	// }
-	// fmt.Println("End")
+	// fmt.Printf("Day06_01: Data need to processed: %v\n", day06.FirstPart(day06.FinalInput))
+	// fmt.Printf("Day06_01: Data need to processed: %v\n", day06.SecondPart(day06.FinalInput))
 
-	//   day05Input := []string {
-	// "move 1 from 2 to 1",
-	// "move 3 from 1 to 3",
-	// "move 2 from 2 to 1",
-	// "move 1 from 1 to 2",
-	//   }
-	//    day05_Crates := map[int][]rune {
-	//      1: {'Z', 'N'},
-	//      2: {'M', 'C', 'D'},
-	//      3: {'P'},
-	//    }
-
-	// [D]                     [N] [F]
-	// [H] [F]             [L] [J] [H]
-	// [R] [H]             [F] [V] [G] [H]
-	// [Z] [Q]         [Z] [W] [L] [J] [B]
-	// [S] [W] [H]     [B] [H] [D] [C] [M]
-	// [P] [R] [S] [G] [J] [J] [W] [Z] [V]
-	// [W] [B] [V] [F] [G] [T] [T] [T] [P]
-	// [Q] [V] [C] [H] [P] [Q] [Z] [D] [W]
-	//  1   2   3   4   5   6   7   8   9
-	// day05_Crates := map[int][]rune {
-	//   1: {'Q', 'W', 'P', 'S', 'Z', 'R', 'H', 'D'},
-	//   2: {'V', 'B', 'R', 'W', 'Q', 'H', 'F'},
-	//   3: {'C', 'V', 'S', 'H'},
-	//   4: {'H', 'F', 'G'},
-	//   5: {'P', 'G', 'J', 'B', 'Z'},
-	//   6: {'Q', 'T', 'J', 'H', 'W', 'F', 'L'},
-	//   7: {'Z', 'T', 'W', 'D', 'L', 'V', 'J', 'N'},
-	//   8: {'D', 'T', 'Z', 'C', 'J', 'G', 'H', 'F'},
-	//   9: {'W', 'P', 'V', 'M', 'B', 'H'},
-	// }
-	// day05Input := ReadLinesWithIgnoreHead("inputs/day05_input.txt", 10)
-	// fmt.Printf("line 1: %s\n", day05Input[0])
-	// fmt.Printf("Day05_01: Total Score: %s\n", Day05_FirstAnswer(day05Input, day05_Crates))
-	// fmt.Printf("Day05_02: Total Score: %s\n", Day05_SecondAnswer(day05Input, day05_Crates))
-
-	// day06Input := ReadLines("inputs/day06_input.txt")
-	// day06Input := []string{
-	// 	"mjqjpqmgbljsphdztnvjfqwrcgsmlb",    // 7
-	// 	"bvwbjplbgvbhsrlpgdmjqwftvncz",      // 5
-	// 	"nppdvjthqldpwncqszvftbrmjlhg",      // 6
-	// 	"nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", // 10
-	// 	"zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw",  // 11
-	// }
-	// fmt.Printf("Day06_01: Data need to processed: %v\n", Day06_FirstAnswer(day06Input))
-	// fmt.Printf("Day06_01: Data need to processed: %v\n", Day06_SecondAnswer(day06Input))
-
-	// day07Input := ReadLines("inputs/day07_input.txt")
-	// day07Input := []string{
-	// 	"$ cd /",
-	// 	"$ ls",
-	// 	"dir a",
-	// 	"14848514 b.txt",
-	// 	"8504156 c.dat",
-	// 	"dir d",
-	// 	"$ cd a",
-	// 	"$ ls",
-	// 	"dir e",
-	// 	"29116 f",
-	// 	"2557 g",
-	// 	"62596 h.lst",
-	// 	"$ cd e",
-	// 	"$ ls",
-	// 	"584 i",
-	// 	"$ cd ..",
-	// 	"$ cd ..",
-	// 	"$ cd d",
-	// 	"$ ls",
-	// 	"4060174 j",
-	// 	"8033020 d.log",
-	// 	"5626152 d.ext",
-	// 	"7214296 k",
-	// }
-	// fmt.Printf("Day07_01: Data need to processed: %v\n", Day07_FirstAnswer(day07Input, 100000))
-	// fmt.Printf("Day07_02: delete dir with size: %d\n", Day07_SecondAnswer(day07Input))
+	// fmt.Printf("Day07_01: Data need to processed: %v\n", day07.FirstPart(day07.FinalInput, 100000))
+	// fmt.Printf("Day07_02: delete dir with size: %d\n", day07.SecondPart(day07.FinalInput))
 
 	// - / (dir)
 	// - a (dir)
@@ -138,39 +44,15 @@ func main() {
 	//   - d.ext (file, size=5626152)
 	//   - k (file, size=7214296)
 
-	// day08Input := ReadLines("inputs/day08_input.txt")
-	// day08Input := []string{
-	// 	"30373",
-	// 	"25512",
-	// 	"65332",
-	// 	"33549",
-	// 	"35390",
-	// }
+	// fmt.Printf("\nDay08_01: visible trees: %d\n", day08.FirstPart(day08.FinalIput))
+	// fmt.Printf("\nDay08_02: heighest scenic score: %d\n", day08.SecondPart(day08.FinalIput))
 
-	// fmt.Printf("\nDay08_01: visible trees: %d\n", Day08_FirstAnswer(day08Input))
-	// fmt.Printf("\nDay08_02: heighest scenic score: %d\n", Day08_SecondAnswer(day08Input))
+	// fmt.Printf("Day09_01: visited cells: %d\n", day09.FirstAnswer(day09.FinalInput))
+	// fmt.Printf("Day09_02: visited cells: %d\n", day09.SecondAnswer(day09.FinalInput))
 
-	day09Input := []string{
-		"R 4",
-		"U 4",
-		"L 3",
-		"D 1",
-		"R 4",
-		"D 1",
-		"L 5",
-		"R 2",
-
-		// "R 5",
-		// "U 8",
-		// "L 8",
-		// "D 3",
-		// "R 17",
-		// "D 10",
-		// "L 25",
-		// "U 20",
-	}
-	// day09Input := ReadLines("inputs/day09_input.txt")
-	fmt.Printf("Day09_01: visited cells: %d\n", Day09_FirstAnswer(day09Input))
-	// fmt.Printf("Day09_02: visited cells: %d\n", Day09_SecondAnswer(day09Input))
+	utils.Debug = false
+	fmt.Printf("Day10_01: register value: %d\n", day10.FirstAnswer(day10.BigInput))
+	fmt.Println("Day10_02: CRT Screen:")
+	day10.SecondAnswer(day10.FinalInput)
 
 }

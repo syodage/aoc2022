@@ -1,10 +1,17 @@
 package main
 
+// import "syodage/aoc2022/utils"
 
-func Day00_FirstAnswer(inputs []string) int {
-  return 0
+var (
+	LocalInput = []string{}
+
+	// FinalInput = utils.ReadLines("inputs/day00_input.txt")
+)
+
+func FirstPart(inputs []string) int {
+	return 0
 }
 
-func Day00_SecondAnswer(inputs []string) int {
-  return 0 
+func SecondPart(inputs []string) int {
+	return 0
 }

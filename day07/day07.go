@@ -1,9 +1,39 @@
-package main
+package day07
 
 import (
 	"fmt"
 	"strconv"
 	"strings"
+	"syodage/aoc2022/utils"
+)
+
+var (
+	LocalInput = []string{
+		"$ cd /",
+		"$ ls",
+		"dir a",
+		"14848514 b.txt",
+		"8504156 c.dat",
+		"dir d",
+		"$ cd a",
+		"$ ls",
+		"dir e",
+		"29116 f",
+		"2557 g",
+		"62596 h.lst",
+		"$ cd e",
+		"$ ls",
+		"584 i",
+		"$ cd ..",
+		"$ cd ..",
+		"$ cd d",
+		"$ ls",
+		"4060174 j",
+		"8033020 d.log",
+		"5626152 d.ext",
+		"7214296 k",
+	}
+	FinalInput = utils.ReadLines("inputs/day07_input.txt")
 )
 
 type node interface {
@@ -72,7 +102,7 @@ func (d *dir) getAtLeast(n int) []*dir {
 	return res
 }
 
-func Day07_FirstAnswer(inputs []string, n int) int {
+func FirstPart(inputs []string, n int) int {
 	rootDir := day07_buildFilesystem(inputs)
 	// rootDir.print("")
 	rootDir.calSize()
@@ -84,7 +114,7 @@ func Day07_FirstAnswer(inputs []string, n int) int {
 	return totalSize
 }
 
-func Day07_SecondAnswer(inputs []string) int {
+func SecondPart(inputs []string) int {
 	totalSpace := 70000000
 	rootDir := day07_buildFilesystem(inputs)
 	// rootDir.print("")

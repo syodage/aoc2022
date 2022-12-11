@@ -1,10 +1,36 @@
-package main
+package day09
 
 import (
 	"fmt"
 	"math"
 	"strconv"
 	"strings"
+	"syodage/aoc2022/utils"
+)
+
+var (
+	SmallInput = []string{
+		"R 4",
+		"U 4",
+		"L 3",
+		"D 1",
+		"R 4",
+		"D 1",
+		"L 5",
+		"R 2",
+	}
+
+	BigInput = []string{
+		"R 5",
+		"U 8",
+		"L 8",
+		"D 3",
+		"R 17",
+		"D 10",
+		"L 25",
+		"U 20",
+	}
+	FinalInput = utils.ReadLines("inputs/day09_input.txt")
 )
 
 type knot struct {
@@ -13,10 +39,10 @@ type knot struct {
 }
 
 func (k *knot) print() {
-	Printlnf("(%d, %d)\n", k.x, k.y)
+	utils.Printlnf("(%d, %d)\n", k.x, k.y)
 }
 
-func Day09_FirstAnswer(inputs []string) int {
+func FirstAnswer(inputs []string) int {
 
 	H, T := &knot{name: "H"}, &knot{name: "T"}
 	visited := make(map[string]struct{})
@@ -31,18 +57,18 @@ func Day09_FirstAnswer(inputs []string) int {
 			switch moveDir {
 			case "L":
 				H.x--
-				// Printlnf("H moved Left (%d, %d)", H.x, H.y)
+				// utils.Printlnf("H moved Left (%d, %d)", H.x, H.y)
 			case "R":
 				H.x++
-				// Printlnf("H moved Right (%d, %d)", H.x, H.y)
+				// utils.Printlnf("H moved Right (%d, %d)", H.x, H.y)
 			case "U":
 				H.y--
-				// Printlnf("H moved UP (%d, %d)", H.x, H.y)
+				// utils.Printlnf("H moved UP (%d, %d)", H.x, H.y)
 			case "D":
 				H.y++
-				// Printlnf("H moved Down (%d, %d)", H.x, H.y)
+				// utils.Printlnf("H moved Down (%d, %d)", H.x, H.y)
 			}
-			day09_moveTail(H, T)
+			moveTail(H, T)
 			visited[fmt.Sprintf("%d:%d", T.x, T.y)] = struct{}{}
 		}
 	}
@@ -50,7 +76,7 @@ func Day09_FirstAnswer(inputs []string) int {
 	return len(visited)
 }
 
-func day09_moveTail(h, t *knot) {
+func moveTail(h, t *knot) {
 
 	mody, modx := math.Abs(float64(h.y-t.y)), math.Abs(float64(h.x-t.x))
 	if modx < 2 && mody < 2 {
@@ -75,12 +101,12 @@ func day09_moveTail(h, t *knot) {
 		t.x--
 		t.y = h.y
 	}
-	Printlnf("%s moved to (%d, %d)", t.name, t.x, t.y)
+	utils.Printlnf("%s moved to (%d, %d)", t.name, t.x, t.y)
 
 }
 
 // moveTail version 2 support moving diagonal
-func day09_moveTail2(h, t *knot) {
+func moveTail2(h, t *knot) {
 
 	mody, modx := math.Abs(float64(h.y-t.y)), math.Abs(float64(h.x-t.x))
 	if modx < 2 && mody < 2 {
@@ -125,11 +151,11 @@ func day09_moveTail2(h, t *knot) {
 
 		}
 	}
-	Printlnf("%s moved to (%d, %d)", t.name, t.x, t.y)
+	utils.Printlnf("%s moved to (%d, %d)", t.name, t.x, t.y)
 
 }
 
-func Day09_SecondAnswer(inputs []string) int {
+func SecondAnswer(inputs []string) int {
 	knots := [10]*knot{}
 	for i := range knots {
 		name := fmt.Sprintf("%d", i)
@@ -143,7 +169,7 @@ func Day09_SecondAnswer(inputs []string) int {
 	visited[fmt.Sprintf("%d:%d", knots[9].x, knots[9].y)] = struct{}{}
 
 	for _, input := range inputs {
-		Printlnf("======================\n%s", input)
+		utils.Printlnf("======================\n%s", input)
 		sp := strings.Split(input, " ")
 		moveDir := sp[0]
 		steps, _ := strconv.Atoi(sp[1])
@@ -152,26 +178,26 @@ func Day09_SecondAnswer(inputs []string) int {
 			switch moveDir {
 			case "L":
 				knots[0].x--
-				Printlnf("%s moved Left (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
+				utils.Printlnf("%s moved Left (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
 			case "R":
 				knots[0].x++
-				Printlnf("%s moved Right (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
+				utils.Printlnf("%s moved Right (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
 			case "U":
 				knots[0].y--
-				Printlnf("%s moved UP (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
+				utils.Printlnf("%s moved UP (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
 			case "D":
 				knots[0].y++
-				Printlnf("%s moved Down (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
+				utils.Printlnf("%s moved Down (%d, %d)\n", knots[0].name, knots[0].x, knots[0].y)
 			}
 
 			for j := 1; j <= 9; j++ {
-				day09_moveTail2(knots[j-1], knots[j])
+				moveTail2(knots[j-1], knots[j])
 			}
 
 			visited[fmt.Sprintf("%d:%d", knots[9].x, knots[9].y)] = struct{}{}
 
 			for _, k := range knots {
-				Printf("%s:", k.name)
+				utils.Printf("%s:", k.name)
 				k.print()
 			}
 		}

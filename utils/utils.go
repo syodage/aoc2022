@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"bufio"
@@ -8,15 +8,15 @@ import (
 	"strings"
 )
 
-var debugEnable bool
+var Debug bool
 
 func Printlnf(format string, a ...any) {
-	if debugEnable {
+	if Debug {
 		Printf(fmt.Sprintf("%s\n", format), a...)
 	}
 }
 func Printf(format string, a ...any) {
-	if debugEnable {
+	if Debug {
 		fmt.Printf(fmt.Sprintf(format, a...))
 	}
 }
