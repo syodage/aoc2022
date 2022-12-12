@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"syodage/aoc2022/day10"
+	"syodage/aoc2022/day11"
 	"syodage/aoc2022/utils"
 )
 
@@ -50,9 +50,14 @@ func main() {
 	// fmt.Printf("Day09_01: visited cells: %d\n", day09.FirstAnswer(day09.FinalInput))
 	// fmt.Printf("Day09_02: visited cells: %d\n", day09.SecondAnswer(day09.FinalInput))
 
+	// fmt.Printf("Day10_01: register value: %d\n", day10.FirstAnswer(day10.BigInput))
+	// fmt.Println("Day10_02: CRT Screen:")
+	// day10.SecondAnswer(day10.FinalInput)
+
 	utils.Debug = false
-	fmt.Printf("Day10_01: register value: %d\n", day10.FirstAnswer(day10.BigInput))
-	fmt.Println("Day10_02: CRT Screen:")
-	day10.SecondAnswer(day10.FinalInput)
+	// fmt.Printf("Day11_01: monkey business: %d\n", day11.FirstPart(day11.LocalInput, 20))
+	// fmt.Printf("Day11_01: monkey business: %d\n", day11.FirstPart(day11.FinalInput, 20))
+	// fmt.Printf("Day11_02: monkey business with managed wl: %d\n", day11.SecondPart(day11.ManagedLocalInput, 10000))
+	fmt.Printf("Day11_02: monkey business with managed wl: %d\n", day11.SecondPart(day11.ManagedFinalInput, 10000))
 
 }
