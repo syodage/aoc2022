@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"syodage/aoc2022/day12"
+	"syodage/aoc2022/day13"
 	"syodage/aoc2022/utils"
 )
 
@@ -63,8 +63,10 @@ func main() {
 	// fmt.Printf("Day12_01: answer: %d\n", day12.FirstPart(day12.LocalInput))
 	// fmt.Printf("Day12_01: answer: %d\n", day12.FirstPart(day12.FinalInput))
 
-	utils.Debug = false
 	// fmt.Printf("Day12_02: answer: %d\n", day12.SecondPart(day12.LocalInput))
-	fmt.Printf("Day12_02: answer: %d\n", day12.SecondPart(day12.FinalInput))
+	// fmt.Printf("Day12_02: answer: %d\n", day12.SecondPart(day12.FinalInput))
 
+	utils.Debug = false
+	// fmt.Printf("Day13_01: answer: %d\n", day13.FirstPart(day13.FinalInput))
+	fmt.Printf("Day13_02: decoded key: %d\n", day13.SecondPart(day13.FinalInput))
 }
